@@ -56,7 +56,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  console.log(post.userImage);
+  console.log(post.comments[0].user);
   const image = post.image;
   const div = document.createElement("article");
   div.classList.add("post");
@@ -82,7 +82,7 @@ const createPost = (post) => {
                 <div class="post__medias">
                   <img
                     class="post__media"
-                    src="${post.image}"
+                    src="${image}"
                     alt="Post Content"
                   />
                 </div>
@@ -130,7 +130,7 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0].user}
                       </a>
                       ${post.comments?.text}
                     </small>
